@@ -1,2 +1,2 @@
-# projetTER
-projetTER annee 2021/2022
+# ProjetWebSemantique
+annee 2020/2021
