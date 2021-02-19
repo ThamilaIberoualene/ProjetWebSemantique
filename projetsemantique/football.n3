@@ -26,16 +26,6 @@ football:TituOuRemplacant
 
 football:Footballeur  rdfs:subClassOf  football:Personnage .
 
-football:kylian_mbappe
-        a                       football:Attaquant ;
-        rdfs:label              "Kylian Mbappé" ;
-        football:age            "30"^^xsd:int ;
-        football:appartient     football:EquipeDeFrance ;
-        football:nationalite    "Français"@fr ;
-        football:nom            "Kylian" ;
-        football:numeroMaillot  "10"^^xsd:int ;
-        football:prenom         "Mbappé" .
-
 football:Hugo_Loris  a          football:GardienDeBut ;
         rdfs:label              "Hugo_Loris" ;
         football:age            "30"^^xsd:int ;
@@ -77,27 +67,7 @@ football:benjamin_pavard
 
 football:Attaquant  rdfs:subClassOf  football:Poste .
 
-football:Entraineur  rdfs:subClassOf  football:Personnage .
-
-football:Personnage  rdfs:subClassOf  rdfs:Class .
-
-football:MilieuDeTerrain
-        rdfs:subClassOf  football:Poste .
-
-football:CoupeDuMonde2018
-        a                   football:Competition ;
-        rdfs:label          "CoupeDuMonde2018" ;
-        football:dateDebut  "2018-06-14"^^xsd:date ;
-        football:dateFin    "2018-07-15"^^xsd:date ;
-        football:nomC       "CoupeDuMondeRussie2018"@fr .
-
-football:EquipeDeFrance
-        a                      football:EquipeNational ;
-        rdfs:label             "EquipeDeFrance" ;
-        football:entrainerPar  football:Didier_Deschamps .
-
-football:antoine_griezmann
-        a                       football:Attaquant ;
+football:Q455462  a             football:Attaquant ;
         rdfs:label              "Antoine Griezmann" ;
         football:age            "30"^^xsd:int ;
         football:appartient     football:EquipeDeFrance ;
@@ -105,6 +75,25 @@ football:antoine_griezmann
         football:nom            "Antoine" ;
         football:numeroMaillot  "7"^^xsd:int ;
         football:prenom         "Griezmann" .
+
+football:Entraineur  rdfs:subClassOf  football:Personnage .
+
+football:Personnage  rdfs:subClassOf  rdfs:Class .
+
+football:MilieuDeTerrain
+        rdfs:subClassOf  football:Poste .
+
+football:EquipeDeFrance
+        a                      football:EquipeNational ;
+        rdfs:label             "EquipeDeFrance" ;
+        football:entrainerPar  football:Didier_Deschamps .
+
+football:CoupeDuMonde2018
+        a                   football:Competition ;
+        rdfs:label          "CoupeDuMonde2018" ;
+        football:dateDebut  "2018-06-14"^^xsd:date ;
+        football:dateFin    "2018-07-15"^^xsd:date ;
+        football:nomC       "CoupeDuMondeRussie2018"@fr .
 
 football:FinalCoupeDuMonde2018
         a                       football:MatchCompetition ;
@@ -116,6 +105,15 @@ football:FinalCoupeDuMonde2018
         football:nomAdversaire  "Croatie"@fr .
 
 football:EquipeClub  rdfs:subClassOf  football:Equipe .
+
+football:Q21621995  a           football:Attaquant ;
+        rdfs:label              "Kylian Mbappé" ;
+        football:age            "30"^^xsd:int ;
+        football:appartient     football:EquipeDeFrance ;
+        football:nationalite    "Français"@fr ;
+        football:nom            "Kylian" ;
+        football:numeroMaillot  "10"^^xsd:int ;
+        football:prenom         "Mbappé" .
 
 football:Pierluigi_Collina
         a           football:Arbitre ;

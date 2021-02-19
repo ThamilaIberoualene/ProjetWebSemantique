@@ -14,7 +14,8 @@ import org.apache.jena.vocabulary.XSD;
 
 public class Football {
 
-    static final String football = "https://www.wikidata.org/wiki/Q2736";
+    static final String base_url = "https://www.wikidata.org/wiki/";
+    static final String football = base_url + "Q2736";
 
     public static void main(String[] args) {
 
@@ -151,7 +152,7 @@ public class Football {
         pres_kimpembe.addProperty(numeroMaillot, m.createTypedLiteral("3", XSD.getURI() + "int"));
         pres_kimpembe.addProperty(appartient, equipeDeFrance);
 
-        Resource griezmann = m.createResource(football + "antoine_griezmann");
+        Resource griezmann = m.createResource(football + "Q455462");
         griezmann.addProperty(RDF.type, attaquant);
         griezmann.addProperty(RDFS.label, "Antoine Griezmann");
         griezmann.addProperty(prenom, m.createLiteral("Griezmann"));
@@ -161,7 +162,7 @@ public class Football {
         griezmann.addProperty(numeroMaillot, m.createTypedLiteral("7", XSD.getURI() + "int"));
         griezmann.addProperty(appartient, equipeDeFrance);
 
-        Resource mbappe = m.createResource(football + "kylian_mbappe");
+        Resource mbappe = m.createResource(football + "Q21621995");
         mbappe.addProperty(RDF.type, attaquant);
         mbappe.addProperty(RDFS.label, "Kylian Mbappé");
         mbappe.addProperty(prenom, m.createLiteral("Mbappé"));
