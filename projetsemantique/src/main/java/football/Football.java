@@ -258,7 +258,7 @@ public class Football {
         kante.addProperty(appartient, equipeDeFrance);
 
         Resource tolisso = m.createResource(football + "corentin_tolisso");
-        tolisso.addProperty(RDF.type, defenseur);
+        tolisso.addProperty(RDF.type, milieuDeTerrain);
         tolisso.addProperty(RDFS.label, "Corentin Tolisso");
         tolisso.addProperty(prenom, m.createLiteral("Corentin"));
         tolisso.addProperty(nom, m.createLiteral("Tolisso"));
@@ -268,7 +268,7 @@ public class Football {
         tolisso.addProperty(appartient, equipeDeFrance);
 
         Resource nzonzi = m.createResource(football + "steven_nzonzi");
-        nzonzi.addProperty(RDF.type, defenseur);
+        nzonzi.addProperty(RDF.type, milieuDeTerrain);
         nzonzi.addProperty(RDFS.label, "Steven Nzonzi");
         nzonzi.addProperty(prenom, m.createLiteral("Steven"));
         nzonzi.addProperty(nom, m.createLiteral("Nzonzi"));
@@ -278,7 +278,7 @@ public class Football {
         nzonzi.addProperty(appartient, equipeDeFrance);
 
         Resource rabiot = m.createResource(football + "adrien_rabiot");
-        rabiot.addProperty(RDF.type, defenseur);
+        rabiot.addProperty(RDF.type, milieuDeTerrain);
         rabiot.addProperty(RDFS.label, "Adrien Rabiot");
         rabiot.addProperty(prenom, m.createLiteral("Adrien"));
         rabiot.addProperty(nom, m.createLiteral("Rabiot"));
@@ -288,7 +288,7 @@ public class Football {
         rabiot.addProperty(appartient, equipeDeFrance);
 
         Resource coman = m.createResource(football + "kingsley_coman");
-        coman.addProperty(RDF.type, defenseur);
+        coman.addProperty(RDF.type, attaquant);
         coman.addProperty(RDFS.label, "Kingsley Coman");
         coman.addProperty(prenom, m.createLiteral("Kingsley"));
         coman.addProperty(nom, m.createLiteral("Coman"));
@@ -298,7 +298,7 @@ public class Football {
         coman.addProperty(appartient, equipeDeFrance);
 
         Resource martial = m.createResource(football + "anthony_martial");
-        martial.addProperty(RDF.type, defenseur);
+        martial.addProperty(RDF.type, attaquant);
         martial.addProperty(RDFS.label, "Anthony Martial");
         martial.addProperty(prenom, m.createLiteral("Anthony"));
         martial.addProperty(nom, m.createLiteral("Martial"));
@@ -308,13 +308,13 @@ public class Football {
         martial.addProperty(appartient, equipeDeFrance);
 
         Resource thuram = m.createResource(football + "marcus_thuram");
-        thuram.addProperty(RDF.type, defenseur);
+        thuram.addProperty(RDF.type, attaquant);
         thuram.addProperty(RDFS.label, "Marcus Thuram");
         thuram.addProperty(prenom, m.createLiteral("Marcus"));
         thuram.addProperty(nom, m.createLiteral("Thuram"));
         thuram.addProperty(age, m.createTypedLiteral("23", XSD.getURI() + "int"));
         thuram.addProperty(nationalite, m.createLiteral("Français", "fr"));
-        thuram.addProperty(numeroMaillot, m.createTypedLiteral("22", XSD.getURI() + "int"));
+        thuram.addProperty(numeroMaillot, m.createTypedLiteral("23", XSD.getURI() + "int"));
         thuram.addProperty(appartient, equipeDeFrance);
 
         Resource giroud = m.createResource(football + "olivier_giroud");
