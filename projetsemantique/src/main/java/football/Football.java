@@ -97,6 +97,11 @@ public class Football {
         Property dateMatch = m.createProperty(football + "dateMatch");
         Property lieuMatch = m.createProperty(football + "lieuMatch");
         Property nomAdversaire = m.createProperty(football + "nomAdversaire");
+        Property fautes = m.createProperty(football, "fautes");
+        Property nbCartonJaune = m.createProperty(football, "nombreCartonsJaunes");
+        Property nbCartonRouges = m.createProperty(football, "nombreCartonsRouges");
+        Property score = m.createProperty(football, "score");
+
         // Competition
         Property dateDebut = m.createProperty(football + "dateDebut");
         Property dateFin = m.createProperty(football + "dateFin");
@@ -122,22 +127,22 @@ public class Football {
 
         // Footballeurs
 
-        Resource hugo_Loris = m.createResource(football + "Hugo_Loris");
-        hugo_Loris.addProperty(RDF.type, gardienDeBut);
-        hugo_Loris.addProperty(RDFS.label, "Hugo_Loris");
-        hugo_Loris.addProperty(prenom, m.createLiteral("Hugo"));
-        hugo_Loris.addProperty(nom, m.createLiteral("Lloris"));
-        hugo_Loris.addProperty(age, m.createTypedLiteral("30", XSD.getURI() + "int"));
-        hugo_Loris.addProperty(nationalite, m.createLiteral("Français", "fr"));
-        hugo_Loris.addProperty(numeroMaillot, m.createTypedLiteral("1", XSD.getURI() + "int"));
-        hugo_Loris.addProperty(appartient, equipeDeFrance);
+        Resource hugo_lloris = m.createResource(football + "hugo_lloris");
+        hugo_lloris.addProperty(RDF.type, gardienDeBut);
+        hugo_lloris.addProperty(RDFS.label, "hugo_lloris");
+        hugo_lloris.addProperty(prenom, m.createLiteral("Hugo"));
+        hugo_lloris.addProperty(nom, m.createLiteral("Lloris"));
+        hugo_lloris.addProperty(age, m.createTypedLiteral("34", XSD.getURI() + "int"));
+        hugo_lloris.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        hugo_lloris.addProperty(numeroMaillot, m.createTypedLiteral("1", XSD.getURI() + "int"));
+        hugo_lloris.addProperty(appartient, equipeDeFrance);
 
         Resource benj_pavard = m.createResource(football + "benjamin_pavard");
         benj_pavard.addProperty(RDF.type, defenseur);
         benj_pavard.addProperty(RDFS.label, "Benhamin Pavard");
         benj_pavard.addProperty(prenom, m.createLiteral("Pavard"));
         benj_pavard.addProperty(nom, m.createLiteral("Benajamin"));
-        benj_pavard.addProperty(age, m.createTypedLiteral("30", XSD.getURI() + "int"));
+        benj_pavard.addProperty(age, m.createTypedLiteral("24", XSD.getURI() + "int"));
         benj_pavard.addProperty(nationalite, m.createLiteral("Français", "fr"));
         benj_pavard.addProperty(numeroMaillot, m.createTypedLiteral("2", XSD.getURI() + "int"));
         benj_pavard.addProperty(appartient, equipeDeFrance);
@@ -147,7 +152,7 @@ public class Football {
         pres_kimpembe.addProperty(RDFS.label, "Presnel Kimpembe");
         pres_kimpembe.addProperty(prenom, m.createLiteral("Kimpembe"));
         pres_kimpembe.addProperty(nom, m.createLiteral("Presnel"));
-        pres_kimpembe.addProperty(age, m.createTypedLiteral("30", XSD.getURI() + "int"));
+        pres_kimpembe.addProperty(age, m.createTypedLiteral("25", XSD.getURI() + "int"));
         pres_kimpembe.addProperty(nationalite, m.createLiteral("Français", "fr"));
         pres_kimpembe.addProperty(numeroMaillot, m.createTypedLiteral("3", XSD.getURI() + "int"));
         pres_kimpembe.addProperty(appartient, equipeDeFrance);
@@ -157,7 +162,7 @@ public class Football {
         griezmann.addProperty(RDFS.label, "Antoine Griezmann");
         griezmann.addProperty(prenom, m.createLiteral("Griezmann"));
         griezmann.addProperty(nom, m.createLiteral("Antoine"));
-        griezmann.addProperty(age, m.createTypedLiteral("30", XSD.getURI() + "int"));
+        griezmann.addProperty(age, m.createTypedLiteral("29", XSD.getURI() + "int"));
         griezmann.addProperty(nationalite, m.createLiteral("Français", "fr"));
         griezmann.addProperty(numeroMaillot, m.createTypedLiteral("7", XSD.getURI() + "int"));
         griezmann.addProperty(appartient, equipeDeFrance);
@@ -167,7 +172,7 @@ public class Football {
         mbappe.addProperty(RDFS.label, "Kylian Mbappé");
         mbappe.addProperty(prenom, m.createLiteral("Mbappé"));
         mbappe.addProperty(nom, m.createLiteral("Kylian"));
-        mbappe.addProperty(age, m.createTypedLiteral("30", XSD.getURI() + "int"));
+        mbappe.addProperty(age, m.createTypedLiteral("22", XSD.getURI() + "int"));
         mbappe.addProperty(nationalite, m.createLiteral("Français", "fr"));
         mbappe.addProperty(numeroMaillot, m.createTypedLiteral("10", XSD.getURI() + "int"));
         mbappe.addProperty(appartient, equipeDeFrance);
@@ -191,6 +196,136 @@ public class Football {
         varane.addProperty(nationalite, m.createLiteral("Français", "fr"));
         varane.addProperty(numeroMaillot, m.createTypedLiteral("4", XSD.getURI() + "int"));
         varane.addProperty(appartient, equipeDeFrance);
+
+        Resource mandanda = m.createResource(football + "steve_mandanda");
+        mandanda.addProperty(RDF.type, gardienDeBut);
+        mandanda.addProperty(RDFS.label, "Steve Mandanda");
+        mandanda.addProperty(prenom, m.createLiteral("Steve"));
+        mandanda.addProperty(nom, m.createLiteral("Mandanda"));
+        mandanda.addProperty(age, m.createTypedLiteral("35", XSD.getURI() + "int"));
+        mandanda.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        mandanda.addProperty(numeroMaillot, m.createTypedLiteral("16", XSD.getURI() + "int"));
+        mandanda.addProperty(appartient, equipeDeFrance);
+
+        Resource zouma = m.createResource(football + "kurt_zouma");
+        zouma.addProperty(RDF.type, defenseur);
+        zouma.addProperty(RDFS.label, "Kurt Zouma");
+        zouma.addProperty(prenom, m.createLiteral("Kurt"));
+        zouma.addProperty(nom, m.createLiteral("Zouma"));
+        zouma.addProperty(age, m.createTypedLiteral("26", XSD.getURI() + "int"));
+        zouma.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        zouma.addProperty(numeroMaillot, m.createTypedLiteral("13", XSD.getURI() + "int"));
+        zouma.addProperty(appartient, equipeDeFrance);
+
+        Resource digne = m.createResource(football + "lucas_digne");
+        digne.addProperty(RDF.type, milieuDeTerrain);
+        digne.addProperty(RDFS.label, "Lucas Digne");
+        digne.addProperty(prenom, m.createLiteral("Lucas"));
+        digne.addProperty(nom, m.createLiteral("Digne"));
+        digne.addProperty(age, m.createTypedLiteral("27", XSD.getURI() + "int"));
+        digne.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        digne.addProperty(numeroMaillot, m.createTypedLiteral("19", XSD.getURI() + "int"));
+        digne.addProperty(appartient, equipeDeFrance);
+
+        Resource hernandez = m.createResource(football + "lucas_hernandez");
+        hernandez.addProperty(RDF.type, milieuDeTerrain);
+        hernandez.addProperty(RDFS.label, "Lucas Hernandez");
+        hernandez.addProperty(prenom, m.createLiteral("Lucas"));
+        hernandez.addProperty(nom, m.createLiteral("Hernadez"));
+        hernandez.addProperty(age, m.createTypedLiteral("25", XSD.getURI() + "int"));
+        hernandez.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        hernandez.addProperty(numeroMaillot, m.createTypedLiteral("21", XSD.getURI() + "int"));
+        hernandez.addProperty(appartient, equipeDeFrance);
+
+        Resource sissoko = m.createResource(football + "moussa_sissoko");
+        sissoko.addProperty(RDF.type, defenseur);
+        sissoko.addProperty(RDFS.label, "Moussa Sissoko");
+        sissoko.addProperty(prenom, m.createLiteral("Moussa"));
+        sissoko.addProperty(nom, m.createLiteral("Issoko"));
+        sissoko.addProperty(age, m.createTypedLiteral("31", XSD.getURI() + "int"));
+        sissoko.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        sissoko.addProperty(numeroMaillot, m.createTypedLiteral("17", XSD.getURI() + "int"));
+        sissoko.addProperty(appartient, equipeDeFrance);
+
+        Resource kante = m.createResource(football + "ngolo_kante");
+        kante.addProperty(RDF.type, milieuDeTerrain);
+        kante.addProperty(RDFS.label, "N'golo Kanté");
+        kante.addProperty(prenom, m.createLiteral("N'golo"));
+        kante.addProperty(nom, m.createLiteral("Kanté"));
+        kante.addProperty(age, m.createTypedLiteral("29", XSD.getURI() + "int"));
+        kante.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        kante.addProperty(numeroMaillot, m.createTypedLiteral("4", XSD.getURI() + "int"));
+        kante.addProperty(appartient, equipeDeFrance);
+
+        Resource tolisso = m.createResource(football + "corentin_tolisso");
+        tolisso.addProperty(RDF.type, defenseur);
+        tolisso.addProperty(RDFS.label, "Corentin Tolisso");
+        tolisso.addProperty(prenom, m.createLiteral("Corentin"));
+        tolisso.addProperty(nom, m.createLiteral("Tolisso"));
+        tolisso.addProperty(age, m.createTypedLiteral("26", XSD.getURI() + "int"));
+        tolisso.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        tolisso.addProperty(numeroMaillot, m.createTypedLiteral("12", XSD.getURI() + "int"));
+        tolisso.addProperty(appartient, equipeDeFrance);
+
+        Resource nzonzi = m.createResource(football + "steven_nzonzi");
+        nzonzi.addProperty(RDF.type, defenseur);
+        nzonzi.addProperty(RDFS.label, "Steven Nzonzi");
+        nzonzi.addProperty(prenom, m.createLiteral("Steven"));
+        nzonzi.addProperty(nom, m.createLiteral("Nzonzi"));
+        nzonzi.addProperty(age, m.createTypedLiteral("32", XSD.getURI() + "int"));
+        nzonzi.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        nzonzi.addProperty(numeroMaillot, m.createTypedLiteral("15", XSD.getURI() + "int"));
+        nzonzi.addProperty(appartient, equipeDeFrance);
+
+        Resource rabiot = m.createResource(football + "adrien_rabiot");
+        rabiot.addProperty(RDF.type, defenseur);
+        rabiot.addProperty(RDFS.label, "Adrien Rabiot");
+        rabiot.addProperty(prenom, m.createLiteral("Adrien"));
+        rabiot.addProperty(nom, m.createLiteral("Rabiot"));
+        rabiot.addProperty(age, m.createTypedLiteral("25", XSD.getURI() + "int"));
+        rabiot.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        rabiot.addProperty(numeroMaillot, m.createTypedLiteral("14", XSD.getURI() + "int"));
+        rabiot.addProperty(appartient, equipeDeFrance);
+
+        Resource coman = m.createResource(football + "kingsley_coman");
+        coman.addProperty(RDF.type, defenseur);
+        coman.addProperty(RDFS.label, "Kingsley Coman");
+        coman.addProperty(prenom, m.createLiteral("Kingsley"));
+        coman.addProperty(nom, m.createLiteral("Coman"));
+        coman.addProperty(age, m.createTypedLiteral("24", XSD.getURI() + "int"));
+        coman.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        coman.addProperty(numeroMaillot, m.createTypedLiteral("11", XSD.getURI() + "int"));
+        coman.addProperty(appartient, equipeDeFrance);
+
+        Resource martial = m.createResource(football + "anthony_martial");
+        martial.addProperty(RDF.type, defenseur);
+        martial.addProperty(RDFS.label, "Anthony Martial");
+        martial.addProperty(prenom, m.createLiteral("Anthony"));
+        martial.addProperty(nom, m.createLiteral("Martial"));
+        martial.addProperty(age, m.createTypedLiteral("25", XSD.getURI() + "int"));
+        martial.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        martial.addProperty(numeroMaillot, m.createTypedLiteral("18", XSD.getURI() + "int"));
+        martial.addProperty(appartient, equipeDeFrance);
+
+        Resource thuram = m.createResource(football + "marcus_thuram");
+        thuram.addProperty(RDF.type, defenseur);
+        thuram.addProperty(RDFS.label, "Marcus Thuram");
+        thuram.addProperty(prenom, m.createLiteral("Marcus"));
+        thuram.addProperty(nom, m.createLiteral("Thuram"));
+        thuram.addProperty(age, m.createTypedLiteral("23", XSD.getURI() + "int"));
+        thuram.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        thuram.addProperty(numeroMaillot, m.createTypedLiteral("22", XSD.getURI() + "int"));
+        thuram.addProperty(appartient, equipeDeFrance);
+
+        Resource giroud = m.createResource(football + "olivier_giroud");
+        giroud.addProperty(RDF.type, attaquant);
+        giroud.addProperty(RDFS.label, "Olivier Giroud");
+        giroud.addProperty(prenom, m.createLiteral("Olivier"));
+        giroud.addProperty(nom, m.createLiteral("Giroud"));
+        giroud.addProperty(age, m.createTypedLiteral("34", XSD.getURI() + "int"));
+        giroud.addProperty(nationalite, m.createLiteral("Français", "fr"));
+        giroud.addProperty(numeroMaillot, m.createTypedLiteral("9", XSD.getURI() + "int"));
+        giroud.addProperty(appartient, equipeDeFrance);
 
         // Entraineur
 
