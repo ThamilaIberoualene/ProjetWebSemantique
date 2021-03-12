@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.apache.jena.ontology.EnumeratedClass;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
@@ -31,10 +32,10 @@ public class Football {
         m.add(personnage, RDFS.subClassOf, RDFS.Class);
         // Match
         Resource match = m.createResource(football + "Match");
-        m.add(personnage, RDFS.subClassOf, RDFS.Class);
+        m.add(match, RDFS.subClassOf, RDFS.Class);
         // Poste
         Resource poste = m.createResource(football + "Poste");
-        m.add(personnage, RDFS.subClassOf, RDFS.Class);
+        m.add(poste, RDFS.subClassOf, RDFS.Class);
         // Equipe
         Resource equipe = m.createResource(football + "Equipe");
         m.add(equipe, RDFS.subClassOf, RDFS.Class);
@@ -49,6 +50,7 @@ public class Football {
 
         // Sous-class
         // Footballer
+        // EnumeratedClass joueur = m
         Resource footballeur = m.createResource(football + "Footballeur");
         footballeur.addProperty(RDFS.subClassOf, personnage);
         // Arbitre
@@ -98,8 +100,8 @@ public class Football {
         Property lieuMatch = m.createProperty(football + "lieuMatch");
         Property nomAdversaire = m.createProperty(football + "nomAdversaire");
         Property fautes = m.createProperty(football, "fautes");
-        Property nbCartonJaune = m.createProperty(football, "nombreCartonsJaunes");
-        Property nbCartonRouges = m.createProperty(football, "nombreCartonsRouges");
+        Property nbCartonsJaunes = m.createProperty(football, "nombreCartonsJaunes");
+        Property nbCartonsRouges = m.createProperty(football, "nombreCartonsRouges");
         Property score = m.createProperty(football, "score");
 
         // Competition

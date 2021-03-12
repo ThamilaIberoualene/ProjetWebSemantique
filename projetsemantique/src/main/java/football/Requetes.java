@@ -29,7 +29,8 @@ public class Requetes {
         String prolog2 = "PREFIX rdf: <" + RDF.getURI() + ">";
         String prolog3 = "PREFIX rdfs: <" + RDFS.getURI() + ">";
 
-        String rdq = prolog1 + NL + prolog2 + NL + prolog3 + "SELECT ?s WHERE { ?s rdf:type football:Attaquant }";
+        String rdq = prolog1 + NL + prolog2 + NL + prolog3
+                + "SELECT ?s ?name WHERE { ?s rdf:type football:Attaquant ; rdfs:label ?name }";
 
         Query query = QueryFactory.create(rdq);
 
@@ -46,8 +47,10 @@ public class Requetes {
 
                 QuerySolution sol = result.next();
                 RDFNode s = sol.get("s");
+                RDFNode name = sol.get("name");
                 // System.out.println(s);
-                System.out.println(s.visitWith(aVisitor) + " ");
+                // System.out.println(s.visitWith(aVisitor) + " ");
+                System.out.println(name.visitWith(aVisitor) + " ");
             }
 
         } catch (Exception e) {
