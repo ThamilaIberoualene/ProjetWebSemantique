@@ -1,7 +1,9 @@
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wdt:   <http://www.wikidata.org/prop/direct/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix football: <http://www.ex.fr/sport#> .
+@prefix wd:    <http://www.wikidata.org/entity/> .
 
 football:presnel_kimpembe
         a                       football:Defenseur ;
@@ -82,8 +84,14 @@ football:lucas_digne  a         football:MilieuDeTerrain ;
         football:numeroMaillot  "19"^^xsd:int ;
         football:prenom         "Lucas" .
 
+<nulladrien_rabiot>  <nullpersonnage>  wd:Q937857 .
+
 football:MilieuDeTerrain
         rdfs:subClassOf  football:Poste .
+
+<nullHugo_Lloris>  <nullpersonnage>  wd:Q937857 .
+
+wd:Q28640  rdfs:label  "profession"@fr .
 
 football:Moussa_Sissoko
         a                       football:Defenseur ;
@@ -101,8 +109,16 @@ football:MatchAmical  rdfs:subClassOf  football:Match .
 
 football:Entraineur  rdfs:subClassOf  football:Personnage .
 
+<nullmarcus_thuram>  <nullpersonnage>  wd:Q937857 .
+
+<nulllucas_hernandez>
+        <nullpersonnage>  wd:Q937857 .
+
 football:GardienDeBut
         rdfs:subClassOf  football:Poste .
+
+wd:Q937857  a       wd:Q28640 ;
+        rdfs:label  "joueur de football"@fr .
 
 football:Pierluigi_Collina
         a           football:Arbitre ;
@@ -130,6 +146,9 @@ football:steve_mandanda
         football:nom            "Mandanda" ;
         football:numeroMaillot  "16"^^xsd:int ;
         football:prenom         "Steve" .
+
+<nullpresnel_kimpembe>
+        <nullpersonnage>  wd:Q937857 .
 
 football:adrien_rabiot
         a                       football:MilieuDeTerrain ;
@@ -200,6 +219,8 @@ football:benjamin_pavard
         football:numeroMaillot  "2"^^xsd:int ;
         football:prenom         "Pavard" .
 
+<nullkingsley_coman>  <nullpersonnage>  wd:Q937857 .
+
 football:kingsley_coman
         a                       football:Attaquant ;
         rdfs:label              "Kingsley Coman" ;
@@ -230,6 +251,8 @@ football:marcus_thuram
         football:numeroMaillot  "23"^^xsd:int ;
         football:prenom         "Marcus" .
 
+<nulllucas_digne>  <nullpersonnage>  wd:Q937857 .
+
 football:Hugo_Lloris  a         football:Footballeur ;
         rdfs:label              "Hugo_Loris" ;
         football:age            "34"^^xsd:int ;
@@ -249,9 +272,9 @@ football:anthony_martial
         football:numeroMaillot  "18"^^xsd:int ;
         football:prenom         "Anthony" .
 
-football:Arbitre  rdfs:subClassOf  football:Personnage .
-
 football:Personnage  rdfs:subClassOf  rdfs:Class .
+
+football:Arbitre  rdfs:subClassOf  football:Personnage .
 
 football:kurt_zouma  a          football:Defenseur ;
         rdfs:label              "Kurt Zouma" ;

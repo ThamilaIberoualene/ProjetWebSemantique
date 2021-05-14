@@ -128,6 +128,11 @@ public class Football {
         Resource equipeDeFrance = m.createResource(football + "EquipeDeFrance");
         equipeDeFrance.addProperty(RDF.type, equipeNational);
         equipeDeFrance.addProperty(RDFS.label, "EquipeDeFrance");
+        
+        //equipeAdverse
+        Resource equipeDeCroatie = m.createResource(football + "EquipeDeCroatie");
+        equipeDeCroatie.addProperty(RDF.type, equipeNational);
+        equipeDeCroatie.addProperty(RDFS.label, "EquipeDeCroatie");
 
         // Footballeurs
 
@@ -331,6 +336,12 @@ public class Football {
         giroud.addProperty(nationalite, m.createLiteral("Français", "fr"));
         giroud.addProperty(numeroMaillot, m.createTypedLiteral("9", XSD.getURI() + "int"));
         giroud.addProperty(appartient, equipeDeFrance);
+        
+        //footballer adverse
+	    Resource danijel_Subasic = m.createResource(football + "Danijel_Subasic");
+        danijel_Subasic.addProperty(RDF.type, gardienDeBut);
+        danijel_Subasic.addProperty(RDFS.label, "Didier_Deschamps");
+        equipeDeCroatie.addProperty(appartient,danijel_Subasic);
 
         // Entraineur
 
