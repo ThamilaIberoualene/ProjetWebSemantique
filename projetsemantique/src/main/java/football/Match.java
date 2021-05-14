@@ -1,18 +1,37 @@
 package football;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.apache.jena.atlas.io.IndentedWriter;
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.rdf.model.RDFVisitor;
 
 public class Match {
 
+    public static ArrayList<Match> matchList = new ArrayList<>();
+
+    private String uri;
     private String lieuMatch;
-    private Date dateMatch;
+    private String dateMatch;
     private Equipe equipeLocal;
     private Equipe equipeVisitant;
+    private Competition competition;
+    private Arbitre arbitre;
 
     public Match() {
     }
 
-    public Match(String lieuMatch, Date dateMatch, Equipe equipeLocal, Equipe equipeVisitant) {
+    public Match(String uri) {
+        this.setUri(uri);
+    }
+
+    public Match(String lieuMatch, String dateMatch, Equipe equipeLocal, Equipe equipeVisitant) {
 
         this.setDateMatch(dateMatch);
         this.setEquipeLocal(equipeLocal);
@@ -21,7 +40,31 @@ public class Match {
 
     }
 
-    public void setDateMatch(Date dateMatch) {
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setArbitre(Arbitre arbitre) {
+        this.arbitre = arbitre;
+    }
+
+    public Arbitre getArbitre() {
+        return arbitre;
+    }
+
+    public void setCompetition(Competition competition) {
+        this.competition = competition;
+    }
+
+    public Competition getCompetition() {
+        return competition;
+    }
+
+    public void setDateMatch(String dateMatch) {
         this.dateMatch = dateMatch;
     }
 
@@ -37,7 +80,7 @@ public class Match {
         this.lieuMatch = lieuMatch;
     }
 
-    public Date getDateMatch() {
+    public String getDateMatch() {
         return dateMatch;
     }
 

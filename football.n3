@@ -1,7 +1,9 @@
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wdt:   <http://www.wikidata.org/prop/direct/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix football: <https://www.wikidata.org/wiki/Q2736> .
+@prefix wd:    <http://www.wikidata.org/entity/> .
 
 football:ngolo_kante  a         football:MilieuDeTerrain ;
         rdfs:label              "N'golo Kanté" ;
@@ -59,6 +61,8 @@ football:adrien_rabiot
 
 football:EquipeNational
         rdfs:subClassOf  football:Equipe .
+
+football:Poste  rdfs:subClassOf  rdfs:Class .
 
 football:olivier_giroud
         a                       football:Attaquant ;
@@ -180,6 +184,8 @@ football:lucas_digne  a         football:MilieuDeTerrain ;
         football:nom            "Digne" ;
         football:numeroMaillot  "19"^^xsd:int ;
         football:prenom         "Lucas" .
+
+football:Match  rdfs:subClassOf  rdfs:Class .
 
 football:steven_nzonzi
         a                       football:MilieuDeTerrain ;

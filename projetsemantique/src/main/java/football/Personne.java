@@ -1,54 +1,56 @@
 package football;
 
+import org.apache.jena.sparql.function.library.print;
+
 public class Personne {
 
-    String nom;
-    String prenom;
-    String age;
-    String nationalite;
+    private String uri;
+    private String label;
+    private String dateNaissance;
+    private String nationalite;
 
     public Personne() {
     }
 
-    public Personne(String nom, String prenom, String age, String nationalite) {
+    public Personne(String uri, String label, String dateNaissance, String nationalite) {
 
-        this.setAge(age);
+        this.setDateNaissance(dateNaissance);
         this.setNationalite(nationalite);
-        this.setNom(nom);
-        this.setPrenom(prenom);
+        this.setUri(uri);
+        this.setLabel(label);
 
     }
 
-    public String getNom() {
-        return nom;
+    public void setLabel(String label) {
+        this.label = label;
     }
 
-    public String getAge() {
-        return age;
+    public String getLabel() {
+        return label;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public String getDateNaissance() {
+        return dateNaissance;
     }
 
     public String getNationalite() {
         return nationalite;
     }
 
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
+    public void setDateNaissance(String dateNaissance) {
+        this.dateNaissance = dateNaissance;
     }
 
     public void setNationalite(String nationalite) {
         this.nationalite = nationalite;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
     }
 
 }

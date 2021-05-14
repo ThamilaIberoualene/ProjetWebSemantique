@@ -15,7 +15,7 @@ import org.apache.jena.vocabulary.XSD;
 
 public class Football {
 
-    static final String base_url = "https://www.wikidata.org/wiki/";
+    static final String base_url = "https://www.wikidata.org/wiki/Q2736";
     static final String football = base_url + "Q2736";
 
     public static void main(String[] args) {
@@ -25,6 +25,8 @@ public class Football {
         m.setNsPrefix("rdf", RDF.getURI());
         m.setNsPrefix("rdfs", RDFS.getURI());
         m.setNsPrefix("xsd", XSD.getURI());
+        m.setNsPrefix("wd", "http://www.wikidata.org/entity/"); // Entity
+        m.setNsPrefix("wdt", "http://www.wikidata.org/prop/direct/"); // Property
 
         // super-Class
         // Personnage
@@ -130,6 +132,7 @@ public class Football {
         // Footballeurs
 
         Resource hugo_lloris = m.createResource(football + "hugo_lloris");
+        System.out.println(hugo_lloris.getURI());
         hugo_lloris.addProperty(RDF.type, gardienDeBut);
         hugo_lloris.addProperty(RDFS.label, "hugo_lloris");
         hugo_lloris.addProperty(prenom, m.createLiteral("Hugo"));
