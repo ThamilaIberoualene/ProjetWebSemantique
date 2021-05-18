@@ -4,8 +4,8 @@ public class EquipeClub extends Equipe {
 
     private String league;
 
-    public EquipeClub(String uri, String nomEquipe, String pays, String stade, String league) {
-        super(uri, nomEquipe, pays, stade);
+    public EquipeClub(String uri, String nomEquipe, String pays, String stade, String league, Entraineur coach) {
+        super(uri, nomEquipe, pays, stade, coach);
         this.setLeague(league);
     }
 

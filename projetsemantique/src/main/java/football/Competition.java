@@ -21,17 +21,27 @@ public class Competition {
     private String pays;
     private String dateDebut;
     private String dateFin;
+    private Equipe winner;
 
     public Competition() {
     }
 
-    public Competition(String uri, String pays, String nomComp, String dateDebut, String dateFin) {
+    public Competition(String uri, String pays, String nomComp, String dateDebut, String dateFin, Equipe winner) {
         this.setDateDebut(dateDebut);
         this.setDateFin(dateFin);
         this.setNomComp(nomComp);
         this.setPays(pays);
         this.setUri(uri);
+        this.setWinner(winner);
 
+    }
+
+    public void setWinner(Equipe winner) {
+        this.winner = winner;
+    }
+
+    public Equipe getWinner() {
+        return winner;
     }
 
     public void setPays(String pays) {
@@ -74,6 +84,26 @@ public class Competition {
         return nomComp;
     }
 
+    public static boolean containsURI(String uri) {
+
+        return Competition.compList.stream().anyMatch(e -> uri.equals(e.getUri()));
+    };
+
+    public static Competition getElemByURI(String uri) {
+
+        return Competition.compList.stream().filter(a -> uri.equals(a.getUri())).findFirst().orElse(null);
+
+    };
+
+    public static void addElem(Competition e) {
+
+        if (!Competition.containsURI(e.getUri())) {
+            Competition.compList.add(e);
+        } else {
+            System.out.println("Competition déjà ajouté");
+        }
+    };
+
     public static void instaceConstructor(String req, String uri) {
 
         String sparqlService = "http://query.wikidata.org/sparql";
@@ -98,12 +128,16 @@ public class Competition {
                 RDFNode dateFin = sol.get("until");
                 RDFNode dateDebut = sol.get("from");
                 RDFNode finalMatch = sol.get("finalMatch");
+                RDFNode winner = sol.get("winner");
 
-                Competition comp = new Competition(uri, country.toString(), compName.toString(), dateDebut.toString(),
-                        dateFin.toString());
+                EquipeNationale champion = EquipeNationale.getElemByURI(winner.visitWith(aVisitor).toString());
 
-                Match finalWordCup2018 = new Match(finalMatch.toString());
-                Match.matchList.add(finalWordCup2018);
+                Competition comp = new Competition(uri, country.visitWith(aVisitor).toString(),
+                        compName.visitWith(aVisitor).toString(), dateDebut.visitWith(aVisitor).toString(),
+                        dateFin.toString(), champion);
+
+                Match finalWordCup2018 = new Match(finalMatch.visitWith(aVisitor).toString());
+                Match.addElem(finalWordCup2018);
 
                 Competition.compList.add(comp);
             }

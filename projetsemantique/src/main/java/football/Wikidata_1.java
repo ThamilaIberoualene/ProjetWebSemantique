@@ -1,4 +1,4 @@
-package projet;
+package football;
 
 import java.util.Iterator;
 

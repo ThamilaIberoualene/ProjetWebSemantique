@@ -1,4 +1,4 @@
-package projet;
+package football;
 
 import java.io.FileOutputStream;
 
@@ -34,10 +34,7 @@ public class WikidataPersonnage
 			Resource digne = m.getResource(a_ns + "lucas_digne");
 			Resource thuram = m.getResource(a_ns + "marcus_thuram");
 			Resource pres_kimpembe = m.getResource(a_ns + "presnel_kimpembe");
-			
-			
-			
-			
+
 			Property personnage = m.createProperty(a_ns + "personnage");
 			m.setNsPrefix("wd", "http://www.wikidata.org/entity/");
 			m.setNsPrefix("wdt", "http://www.wikidata.org/prop/direct/");
@@ -65,7 +62,7 @@ public class WikidataPersonnage
 				cartoon_type = (Resource) sol.get("?o");
 				Literal label = (Literal) sol.get("?label");
 				Literal label_s = (Literal) sol.get("?label_s");
-				
+
 				m.add(hugo_Loris, personnage, cartoon);
 				m.add(coman, personnage, cartoon);
 				m.add(rabiot, personnage, cartoon);
@@ -76,7 +73,7 @@ public class WikidataPersonnage
 				m.add(cartoon, RDF.type, cartoon_type);
 				m.add(cartoon, RDFS.label, label);
 				m.add(cartoon_type, RDFS.label, label_s);
-				
+
 			}
 
 			qexec.close();

@@ -1,5 +1,7 @@
 package football;
 
+import java.util.regex.Matcher;
+
 import org.apache.jena.sparql.function.library.print;
 
 public class Personne {
@@ -30,6 +32,7 @@ public class Personne {
     }
 
     public void setUri(String uri) {
+
         this.uri = uri;
     }
 

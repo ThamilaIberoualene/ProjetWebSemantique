@@ -24,10 +24,13 @@ public class Footballeur extends Personne {
     public Footballeur() {
     }
 
-    public Footballeur(String uri, String label, String dateNaissance, String nationalite, String poste) {
+    public Footballeur(String uri, String label, String dateNaissance, String nationalite, String poste,
+            String numMaillotString) {
 
         super(uri, label, dateNaissance, nationalite);
         this.setPoste(poste);
+        int numMaillot = Integer.parseInt(numMaillotString);
+        this.setNumMaillot(numMaillot);
 
     }
 
@@ -56,6 +59,7 @@ public class Footballeur extends Personne {
     }
 
     public void setNumMaillot(int numMaillot) {
+
         this.numMaillot = numMaillot;
     }
 
@@ -69,18 +73,23 @@ public class Footballeur extends Personne {
         return getNationalite() + " " + getLabel() + " " + getPoste();
     }
 
-    public static void instaceConstructor(String req) {
+    public static void instanceConstructor(String req) {
+
+        // System.out.println(req);
 
         String sparqlService = "http://query.wikidata.org/sparql";
 
         Query query = QueryFactory.create(req);
         QueryExecution qexec = QueryExecutionFactory.sparqlService(sparqlService, query);
+
         query.serialize(new IndentedWriter(System.out, true));
         System.out.println();
 
         try {
             // ResultSet rs = qexec.execSelect();
             // ResultSetFormatter.out(System.out, rs, query);
+            qexec.setTimeout(5000, 15000);
+            System.out.println(qexec.getTimeout2());
             Iterator<QuerySolution> result = qexec.execSelect();
 
             RDFVisitor aVisitor = new Un_Visiteur();
@@ -93,10 +102,12 @@ public class Footballeur extends Personne {
                 RDFNode posteLbl = sol.get("posteLbl");
                 RDFNode dateBirth = sol.get("dob");
                 RDFNode nationalite = sol.get("nationaliteLbl");
+                RDFNode numMaillot = sol.get("numMaillot");
 
                 Footballeur player = new Footballeur(uri.visitWith(aVisitor).toString(),
                         name.visitWith(aVisitor).toString(), dateBirth.visitWith(aVisitor).toString(),
-                        nationalite.visitWith(aVisitor).toString(), posteLbl.visitWith(aVisitor).toString());
+                        nationalite.visitWith(aVisitor).toString(), posteLbl.visitWith(aVisitor).toString(),
+                        numMaillot.toString());
 
                 Footballeur.listPlayers.add(player);
             }
